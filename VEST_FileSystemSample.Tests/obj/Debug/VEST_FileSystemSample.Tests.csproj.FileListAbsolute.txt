@@ -1,0 +1,14 @@
+c:\work\github\VEST\VEST_FileSystemSample.Tests\bin\Debug\VEST_FileSystemSample.Tests.dll
+c:\work\github\VEST\VEST_FileSystemSample.Tests\bin\Debug\VEST_FileSystemSample.Tests.pdb
+c:\work\github\VEST\VEST_FileSystemSample.Tests\bin\Debug\FakeItEasy.dll
+c:\work\github\VEST\VEST_FileSystemSample.Tests\bin\Debug\nunit.framework.dll
+c:\work\github\VEST\VEST_FileSystemSample.Tests\bin\Debug\System.IO.Abstractions.dll
+c:\work\github\VEST\VEST_FileSystemSample.Tests\bin\Debug\VEST_FileSystemSample.exe
+c:\work\github\VEST\VEST_FileSystemSample.Tests\bin\Debug\VEST_FileSystemSample.pdb
+c:\work\github\VEST\VEST_FileSystemSample.Tests\bin\Debug\FakeItEasy.pdb
+c:\work\github\VEST\VEST_FileSystemSample.Tests\bin\Debug\FakeItEasy.xml
+c:\work\github\VEST\VEST_FileSystemSample.Tests\bin\Debug\nunit.framework.xml
+c:\work\github\VEST\VEST_FileSystemSample.Tests\obj\Debug\VEST_FileSystemSample.Tests.csprojResolveAssemblyReference.cache
+c:\work\github\VEST\VEST_FileSystemSample.Tests\obj\Debug\VEST_FileSystemSample.Tests.dll
+c:\work\github\VEST\VEST_FileSystemSample.Tests\obj\Debug\VEST_FileSystemSample.Tests.pdb
+c:\work\github\VEST\VEST_FileSystemSample.Tests\bin\Debug\System.IO.Abstractions.TestingHelpers.dll
