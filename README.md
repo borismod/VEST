@@ -20,6 +20,6 @@ If you know or own a library like that feel free to contribute via PR.
 | Language 	| Library                               |                                                                       |
 |----------	|---------------------------------------|-----------------------------------------------------------------------|
 | C#       	| System.Data.SQLite                 	| https://system.data.sqlite.org/index.html/doc/trunk/www/index.wiki    |
-| Python   	| [sqlite3][6]                          | https://docs.python.org/2/library/sqlite3.html                        |
+| Python   	| sqlite3                               | https://docs.python.org/2/library/sqlite3.html                        |
 
 
