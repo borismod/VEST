@@ -22,10 +22,10 @@ If you know or own a library like that feel free to contribute via PR.
 
 ## In-Memory Database
 
-| Language 	| Library                               	|
-|----------	|---------------------------------------	|
-| C#       	| [System.Data.SQLite][5] 	|
-| Python   	| [sqlite3][6]                              	|
+| Language 	| Library                               |
+|----------	|---------------------------------------|
+| C#       	| [System.Data.SQLite][5] 				|
+| Python   	| [sqlite3][6]                          |
 
 
 
