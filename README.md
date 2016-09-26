@@ -29,6 +29,6 @@ If you know or own a library like that feel free to contribute via PR.
 
 
 
-[5]: [https://system.data.sqlite.org/index.html/doc/trunk/www/index.wiki]
-[6]: [https://docs.python.org/2/library/sqlite3.html]
+[5]: https://system.data.sqlite.org/index.html/doc/trunk/www/index.wiki
+[6]: https://docs.python.org/2/library/sqlite3.html
 
