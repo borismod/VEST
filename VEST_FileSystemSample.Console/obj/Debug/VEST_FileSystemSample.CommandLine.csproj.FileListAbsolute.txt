@@ -1,9 +1,0 @@
-c:\work\github\VEST\VEST_FileSystemSample.Console\bin\Debug\VEST_FileSystemSample.CommandLine.exe.config
-c:\work\github\VEST\VEST_FileSystemSample.Console\bin\Debug\VEST_FileSystemSample.CommandLine.exe
-c:\work\github\VEST\VEST_FileSystemSample.Console\bin\Debug\VEST_FileSystemSample.CommandLine.pdb
-c:\work\github\VEST\VEST_FileSystemSample.Console\bin\Debug\System.IO.Abstractions.dll
-c:\work\github\VEST\VEST_FileSystemSample.Console\bin\Debug\VEST_FileSystemSample.exe
-c:\work\github\VEST\VEST_FileSystemSample.Console\bin\Debug\VEST_FileSystemSample.pdb
-c:\work\github\VEST\VEST_FileSystemSample.Console\obj\Debug\VEST_FileSystemSample.CommandLine.csprojResolveAssemblyReference.cache
-c:\work\github\VEST\VEST_FileSystemSample.Console\obj\Debug\VEST_FileSystemSample.CommandLine.exe
-c:\work\github\VEST\VEST_FileSystemSample.Console\obj\Debug\VEST_FileSystemSample.CommandLine.pdb
