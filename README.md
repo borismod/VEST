@@ -9,17 +9,17 @@ If you know or own a library like that feel free to contribute via PR.
 
 | Language 	| Library                               	| Project Site                                              |
 |----------	|-------------------------------------------|-----------------------------------------------------------|
-| C#       	| System.IO.Abstractions.TestingHelpers 	| [https://github.com/tathamoddie/System.IO.Abstractions]   |
-| Python   	| pyfakefs                                  | [https://github.com/jmcgeheeiv/pyfakefs]                  |
-| Java     	| memoryfilesystem                          | [https://github.com/marschall/memoryfilesystem]           |
-| Ruby     	| Fakefs                                    | [https://github.com/fakefs/fakefs]                        |
+| C#       	| System.IO.Abstractions.TestingHelpers 	| https://github.com/tathamoddie/System.IO.Abstractions     |
+| Python   	| pyfakefs                                  | https://github.com/jmcgeheeiv/pyfakefs                    |
+| Java     	| memoryfilesystem                          | https://github.com/marschall/memoryfilesystem             |
+| Ruby     	| Fakefs                                    | https://github.com/fakefs/fakefs                          |
 
 
 ## In-Memory Database
 
 | Language 	| Library                               |                                                                       |
 |----------	|---------------------------------------|-----------------------------------------------------------------------|
-| C#       	| System.Data.SQLite                 	| [https://system.data.sqlite.org/index.html/doc/trunk/www/index.wiki]  |
-| Python   	| [sqlite3][6]                          | [https://docs.python.org/2/library/sqlite3.html]                      |
+| C#       	| System.Data.SQLite                 	| https://system.data.sqlite.org/index.html/doc/trunk/www/index.wiki    |
+| Python   	| [sqlite3][6]                          | https://docs.python.org/2/library/sqlite3.html                        |
 
 
