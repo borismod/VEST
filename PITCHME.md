@@ -9,21 +9,26 @@
 
 #HSLIDE
 
-```C#
-using System.IO.Abstractions;
-public void Validate()
-{
-    foreach (var file in fileSystem.Directory.GetFiles(
-	@"c:\", "*.txt", SearchOption.TopDirectoryOnly))
-    {
-        var text = fileSystem.File.ReadAllText(file);
+|       Class A       |
+|---------------------|
+|       Class B       | 
+|---------------------|
+|       Class C       |
+|---------------------|
+| External Dependency |
 
-        if (text != "Testing is awesome.")
-            throw new NotSupportedException(
-		"It's not me, it's you.");
-    }
+#HSLIDE
+
+```C#
+public class C
+{
+  public string GetContent(string file)
+  { 
+    return File.ReadAllText(file);
+  }
 }
 ```
+
 #HSLIDE
 ```C#
 [Test]
@@ -164,8 +169,8 @@ public void Test_With_InMemory_FileSystem()
 
 #HSLIDE
 
-* This presentation and VEST Friendly Libraries:
-https://github.com/borismod/vest
+* The End
+github.com/borismod/vest
 
 
 #HSLIDE
