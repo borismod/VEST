@@ -1,4 +1,4 @@
-# Mocking Frameworks are out. What's next?
+## Mocking Frameworks are out. What's next?
 
 #HSLIDE
 
@@ -10,7 +10,7 @@
 
 #HSLIDE
 
-Mocking Frameworks:
+### Mocking Frameworks' usage:
 * **Replace external dependencies**
 * Replace internal dependencies
 
@@ -137,7 +137,7 @@ public void Test_With_MocksForFileOpen()
 
 #HSLIDE
 
-Problems with mocking frameworks:
+### Problems with mocking frameworks:
 * Lengthy setup in tests
 * Prevents refactoring
 * A lot of test maintenance
@@ -145,7 +145,7 @@ Problems with mocking frameworks:
 
 #HSLIDE
 
-# Use in-memory implementation
+## Use in-memory implementation
 
 #HSLIDE
 
@@ -161,7 +161,7 @@ public void GetContent_FileExists_ContentRead()
 ```
 #HSLIDE
 
-In-memory file systems:
+### In-memory file systems:
 * .NET - System.IO.Abstractions.TestingHelpers
 * Java - jimfs
 * Python - pyfakefs
@@ -169,19 +169,19 @@ In-memory file systems:
 
 #HSLIDE
 
-In-memory databases:
+### In-memory databases:
 * .NET - Effort for EF
 * SQLite - cross platform 
 
 #HSLIDE
 
-Mocking Frameworks:
+### Mocking Frameworks' usage:
 * Replace external dependencies
 * **Replace internal dependencies**
 
 #HSLIDE
 
-Problems with mocking frameworks:
+### Problems with mocking frameworks:
 * Lengthy setup in tests
 * Prevents refactoring
 * A lot of test maintenance
@@ -189,25 +189,25 @@ Problems with mocking frameworks:
 
 #HSLIDE
 
-# Unit != Class
+## Unit != Class
 
 #HSLIDE
 
-# Slice is a Unit
+## Slice is a Unit
 
 #HSLIDE
 
-# **VE**erical **S**lice **T**esting
+### **V**ertical **S**lice **T**esting
 
 #HSLIDE
 
-## **VEST** Principles
+### **VEST** Principles
 * Looking from the outside 
 * Use in-memory implementation
 
 #HSLIDE
 
-##Unit Tests properties
+###Unit Tests properties
 
 * **F**ast
 * **I**solated
