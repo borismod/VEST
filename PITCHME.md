@@ -10,14 +10,6 @@
 
 #HSLIDE
 
-| MyClassA |
-| MyClassB | 
-| MyClassC |
-|----------|
-| External |
-
-#HSLIDE
-
 Mocking Frameworks:
 * **Replace external dependencies**
 * Replace internal dependencies
@@ -89,11 +81,11 @@ public class MyClassC
 
 ```C#
 FileStream Open(string path, FileMode mode);
-FileStream Open(string path, FileMode mode, FileAccess access);
-FileStream Open(string path, FileMode mode, FileAccess access, FileShare share);
+FileStream Open(string path, FileMode mode, 
+	FileAccess access);
+FileStream Open(string path, FileMode mode, 
+	FileAccess access, FileShare share);
 ```
-
-#HSLIDE
 
 #HSLIDE
 ```C#
@@ -102,16 +94,21 @@ public void Test_With_MocksForFileOpen()
 {
     var fileSystem = A.Fake<IFileSystem>();
 
-    A.CallTo(() => fileSystem.File.Open(@"c:\myfile.txt", FileMode.Open))
+    A.CallTo(() => fileSystem.File.Open(@"c:\myfile.txt", 
+		FileMode.Open))
         .Returns(new MemoryStream(Encoding.Default.GetBytes("Testing is meh.")));
 
-    A.CallTo(() => fileSystem.File.Open(@"c:\myfile.txt", FileMode.Open, FileAccess.Read))
+    A.CallTo(() => fileSystem.File.Open(@"c:\myfile.txt", 
+		FileMode.Open, FileAccess.Read))
         .Returns(new MemoryStream(Encoding.Default.GetBytes("Testing is meh.")));
 
-    A.CallTo(() => fileSystem.File.Open(@"c:\myfile.txt", FileMode.Open, FileAccess.Read, FileShare.Read))
+    A.CallTo(() => fileSystem.File.Open(@"c:\myfile.txt", 
+		FileMode.Open, FileAccess.Read, FileShare.Read))
         .Returns(new MemoryStream(Encoding.Default.GetBytes("Testing is meh.")));
 }
 ```
+
+#HSLIDE
 
 ## A lot of test maintenance
 
@@ -120,7 +117,7 @@ public void Test_With_MocksForFileOpen()
 ```C#
 public void CreateFile(string path, string content)
 {
-    fileSystem.File.WriteAllText(path, content);
+    _fileSystem.File.WriteAllText(path, content);
 }
 
 [Test]
@@ -148,12 +145,11 @@ Problems with mocking frameworks:
 
 #HSLIDE
 
-Use in-memory implementation
+# Use in-memory implementation
 
 #HSLIDE
 
 ```C#
-
 [Test]
 public void GetContent_FileExists_ContentRead()
 {
@@ -163,7 +159,6 @@ public void GetContent_FileExists_ContentRead()
 }
 
 ```
-
 #HSLIDE
 
 In-memory file systems:
@@ -186,14 +181,6 @@ Mocking Frameworks:
 
 #HSLIDE
 
-| MyClassA |
-| MyClassB | 
-| MyClassC |
-|----------|
-| External |
-
-#HSLIDE
-
 Problems with mocking frameworks:
 * Lengthy setup in tests
 * Prevents refactoring
@@ -202,19 +189,19 @@ Problems with mocking frameworks:
 
 #HSLIDE
 
-Unit != Class
+# Unit != Class
 
 #HSLIDE
 
-Slice is a Unit
+# Slice is a Unit
 
 #HSLIDE
 
-**VE**erical **S**lice **T**esting
+# **VE**erical **S**lice **T**esting
 
 #HSLIDE
 
-**VEST** Principles
+## **VEST** Principles
 * Looking from the outside 
 * Use in-memory implementation
 
