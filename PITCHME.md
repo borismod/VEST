@@ -36,13 +36,11 @@ public class MyClass
 #HSLIDE
 
 ```C#
-using System.IO.Abstractions;
 using FakeItEasy;
 
-[Test]
+[Test] 
 public void GetContent_FileExists_ReturnsContent()
 {
-  // Arrange
   IFileSystem fileSystem = A.Fake<IFileSystem>();
   A.CallTo(() => fileSystem.File.Exists(@"c:\myfile.txt"))
      .Returns(true);
@@ -51,9 +49,9 @@ public void GetContent_FileExists_ReturnsContent()
         .Returns("Testing is meh.");
 		
   MyClass myClass = new MyClass(fileSystem);
-  // Act  
-  string actualContent = new MyClass(fileSystem).GetContent(@"c:\myfile.txt");
-  ...
+  string actualContent = myClass.GetContent(@"c:\myfile.txt");
+  
+  Assert.AreEqual(actualContent, @"c:\myfile.txt")
 }
 ```
 
@@ -69,9 +67,6 @@ using System.IO.Abstractions;
 public class MyClass
 {
   private IFileSystem _fileSystem;
-  public MyClass(IFileSystem fileSystem) {
-    _fileSystem = fileSystem;
-  }  
   
   public string GetContent(string file)
   { 
@@ -133,7 +128,7 @@ public void CreateFile(string path, string content)
 }
 
 [Test]
-public void Test_With_MocksForFileOpen()
+public void CreateFile_DirDoesNotExist_FileCreated()
 {
     var fileSystem = A.Fake<IFileSystem>();
 
