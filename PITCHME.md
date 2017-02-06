@@ -44,7 +44,6 @@ public void GetContent_FileExists_ReturnsContent()
   IFileSystem fileSystem = A.Fake<IFileSystem>();
   A.CallTo(() => fileSystem.File.Exists(@"c:\myfile.txt"))
      .Returns(true);
-
   A.CallTo(() => fileSystem.File.ReadAllText(@"c:\myfile.txt"))
         .Returns("Testing is meh.");
 		
@@ -88,8 +87,10 @@ public class MyClass
 
 ```C#
 FileStream Open(string path, FileMode mode);
+
 FileStream Open(string path, FileMode mode, 
 	FileAccess access);
+	
 FileStream Open(string path, FileMode mode, 
 	FileAccess access, FileShare share);
 ```
@@ -99,16 +100,13 @@ FileStream Open(string path, FileMode mode,
 [Test]
 public void GetContent_FileExists_ReturnsContent()
 {
-    var fileSystem = A.Fake<IFileSystem>();
-
+    IFileSystem fileSystem = A.Fake<IFileSystem>();
     A.CallTo(() => fileSystem.File.Open(@"c:\myfile.txt", 
 		FileMode.Open))
         .Returns(new MemoryStream(Encoding.Default.GetBytes("Testing is meh.")));
-
     A.CallTo(() => fileSystem.File.Open(@"c:\myfile.txt", 
 		FileMode.Open, FileAccess.Read))
         .Returns(new MemoryStream(Encoding.Default.GetBytes("Testing is meh.")));
-
     A.CallTo(() => fileSystem.File.Open(@"c:\myfile.txt", 
 		FileMode.Open, FileAccess.Read, FileShare.Read))
         .Returns(new MemoryStream(Encoding.Default.GetBytes("Testing is meh.")));
@@ -162,15 +160,12 @@ using System.IO.Abstractions.TestingHelpers;
 [Test]
 public void GetContent_FileExists_ContentRead()
 {
-  // Arrange
   MockFileSystem mockFileSystem = new MockFileSystem();
   mockFileSystem.AddFile(@"c:\myfile.txt", new MockFileData("Testing is awesome."));
   
-  // Act
   MyClass myClass = new MyClass(mockFileSystem);
   string actualContent = myClass.GetContent(@"c:\myfile.txt");
   
-  // Assert
   Assert.AreEqual(actualContent, "Testing is awesome."); 
 }
 
