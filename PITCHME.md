@@ -98,16 +98,16 @@ FileStream Open(string path, FileMode mode,
 [Test]
 public void GetContent_FileExists_ReturnsContent()
 {
-    IFileSystem fileSystem = A.Fake<IFileSystem>();
-    A.CallTo(() => fileSystem.File.Open(@"c:\myfile.txt", 
-		FileMode.Open))
-        .Returns(new MemoryStream(Encoding.Default.GetBytes("Testing is meh.")));
-    A.CallTo(() => fileSystem.File.Open(@"c:\myfile.txt", 
-		FileMode.Open, FileAccess.Read))
-        .Returns(new MemoryStream(Encoding.Default.GetBytes("Testing is meh.")));
-    A.CallTo(() => fileSystem.File.Open(@"c:\myfile.txt", 
-		FileMode.Open, FileAccess.Read, FileShare.Read))
-        .Returns(new MemoryStream(Encoding.Default.GetBytes("Testing is meh.")));
+  MemoryStream stream = new MemoryStream(Encoding.Default.GetBytes("Testing is meh."));
+  IFileSystem fileSystem = A.Fake<IFileSystem>();
+  A.CallTo(() => fileSystem.File.Open(@"c:\myfile.txt", 
+    FileMode.Open)).Returns(stream);
+  A.CallTo(() => fileSystem.File.Open(@"c:\myfile.txt", 
+    FileMode.Open, FileAccess.Read))
+    .Returns(stream);
+  A.CallTo(() => fileSystem.File.Open(@"c:\myfile.txt", 
+    FileMode.Open, FileAccess.Read, FileShare.Read))
+    .Returns(stream);
 }
 ```
 
@@ -126,7 +126,7 @@ public void CreateFile(string path, string content)
 [Test]
 public void CreateFile_DirDoesNotExist_FileCreated()
 {
-    var fileSystem = A.Fake<IFileSystem>();
+    IFileSystem fileSystem = A.Fake<IFileSystem>();
 
     A.CallTo(() => fileSystem.File.WriteAllText(
 	@"c:\Dir\SubDir\myfile.txt", "file content"))
@@ -213,17 +213,17 @@ public void GetContent_FileExists_ContentRead()
 
 ## Vertical Slice Testing or VEST
 
-#HSLIDE
+#VSLIDE
 
 ### **VEST** Principles
 * Looking from the outside 
 * Use in-memory implementation
 
-#HSLIDE
+#VSLIDE
 
 ## Show me the code
 
-#HSLIDE
+#VSLIDE
 
 ## Thank you
 github.com/borismod/vest
