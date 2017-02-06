@@ -22,9 +22,7 @@ using System.IO.Abstractions;
 public class MyClass
 {
   private IFileSystem _fileSystem;
-  public MyClass(IFileSystem fileSystem) {
-    _fileSystem = fileSystem;
-  }  
+  ...
   public string GetContent(string file)
   { 
     if ( !_fileSystem.File.Exists(file) )
