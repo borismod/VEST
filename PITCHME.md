@@ -17,10 +17,14 @@
 #HSLIDE
 
 ```C#
-public class MyClassC
+using System.IO.Abstractions;
+
+public class MyClass
 {
-  IFileSystem _fileSystem;
-  
+  private IFileSystem _fileSystem;
+  public MyClass(IFileSystem fileSystem) {
+    _fileSystem = fileSystem;
+  }  
   public string GetContent(string file)
   { 
     if ( !_fileSystem.File.Exists(file) )
@@ -35,15 +39,24 @@ public class MyClassC
 #HSLIDE
 
 ```C#
-[Test]
-public void Test_With_MockingFramework()
-{
-    var fileSystem = A.Fake<IFileSystem>();
-    A.CallTo(() => fileSystem.File.Exist(@"c:\myfile.txt"))
-        .Returns(true);
+using System.IO.Abstractions;
+using FakeItEasy;
 
-    A.CallTo(() => fileSystem.File.ReadAllText(@"c:\myfile.txt"))
+[Test]
+public void GetContent_FileExists_ReturnsContent()
+{
+  // Arrange
+  IFileSystem fileSystem = A.Fake<IFileSystem>();
+  A.CallTo(() => fileSystem.File.Exists(@"c:\myfile.txt"))
+     .Returns(true);
+
+  A.CallTo(() => fileSystem.File.ReadAllText(@"c:\myfile.txt"))
         .Returns("Testing is meh.");
+		
+  MyClass myClass = new MyClass(fileSystem);
+  // Act  
+  string actualContent = new MyClass(fileSystem).GetContent(@"c:\myfile.txt");
+  ...
 }
 ```
 
@@ -54,21 +67,23 @@ public void Test_With_MockingFramework()
 #HSLIDE
 
 ```C#
-public class MyClassC
+using System.IO.Abstractions;
+
+public class MyClass
 {
-  IFileSystem _fileSystem;
+  private IFileSystem _fileSystem;
+  public MyClass(IFileSystem fileSystem) {
+    _fileSystem = fileSystem;
+  }  
   
   public string GetContent(string file)
   { 
     if ( !_fileSystem.File.Exists(file) )
-	{
 	  throw new ArgumentException(file);
-	}
+
 	using (var stream = _fileSystem.File.Open(file, FileMode.Open))
     using(var streamReader = new StreamReader(stream))
-    {
 	  return streamReader.ReadToEnd();
-	}
   }
 }
 ```
@@ -90,7 +105,7 @@ FileStream Open(string path, FileMode mode,
 #HSLIDE
 ```C#
 [Test]
-public void Test_With_MocksForFileOpen()
+public void GetContent_FileExists_ReturnsContent()
 {
     var fileSystem = A.Fake<IFileSystem>();
 
@@ -150,12 +165,21 @@ public void Test_With_MocksForFileOpen()
 #HSLIDE
 
 ```C#
+using System.IO.Abstractions.TestingHelpers;
+
 [Test]
 public void GetContent_FileExists_ContentRead()
 {
-  var mockFileSystem = new MockFileSystem();
-  mockFileSystem.AddFile(@"c:\myfile.txt", 
-    new MockFileData("Testing is awesome."));
+  // Arrange
+  MockFileSystem mockFileSystem = new MockFileSystem();
+  mockFileSystem.AddFile(@"c:\myfile.txt", new MockFileData("Testing is awesome."));
+  
+  // Act
+  MyClass myClass = new MyClass(mockFileSystem);
+  string actualContent = myClass.GetContent(@"c:\myfile.txt");
+  
+  // Assert
+  Assert.AreEqual(actualContent, "Testing is awesome."); 
 }
 
 ```
@@ -181,11 +205,17 @@ public void GetContent_FileExists_ContentRead()
 
 #HSLIDE
 
-### Problems with mocking frameworks:
-* Lengthy setup in tests
-* Prevents refactoring
-* A lot of test maintenance
-* Relies on wrong assumptions 
+## What is unit test?
+
+#HSLIDE
+
+###Unit Tests properties
+
+* **F**ast
+* **I**solated
+* **R**epeatable
+* **S**elf verifying
+* **T**imely
 
 #HSLIDE
 
@@ -197,7 +227,7 @@ public void GetContent_FileExists_ContentRead()
 
 #HSLIDE
 
-### **V**ertical **S**lice **T**esting
+## Vertical Slice Testing or VEST
 
 #HSLIDE
 
@@ -207,13 +237,7 @@ public void GetContent_FileExists_ContentRead()
 
 #HSLIDE
 
-###Unit Tests properties
-
-* **F**ast
-* **I**solated
-* **R**epeatable
-* **S**elf verifying
-* **T**imely
+## Show me the code
 
 #HSLIDE
 
