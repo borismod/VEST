@@ -28,9 +28,8 @@ public class MyClass
   public string GetContent(string file)
   { 
     if ( !_fileSystem.File.Exists(file) )
-	{
 	  throw new ArgumentException(file);
-	}
+	  
     return _fileSystem.File.ReadAllText(file);
   }
 }
