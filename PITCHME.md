@@ -37,7 +37,6 @@ public class MyClass
 
 ```C#
 using FakeItEasy;
-
 [Test] 
 public void GetContent_FileExists_ReturnsContent()
 {
@@ -62,7 +61,6 @@ public void GetContent_FileExists_ReturnsContent()
 
 ```C#
 using System.IO.Abstractions;
-
 public class MyClass
 {
   private IFileSystem _fileSystem;
@@ -156,19 +154,18 @@ public void CreateFile_DirDoesNotExist_FileCreated()
 
 ```C#
 using System.IO.Abstractions.TestingHelpers;
-
 [Test]
 public void GetContent_FileExists_ContentRead()
 {
   MockFileSystem mockFileSystem = new MockFileSystem();
-  mockFileSystem.AddFile(@"c:\myfile.txt", new MockFileData("Testing is awesome."));
+  mockFileSystem.AddFile(@"c:\myfile.txt", 
+    new MockFileData("Testing is awesome."));
   
   MyClass myClass = new MyClass(mockFileSystem);
   string actualContent = myClass.GetContent(@"c:\myfile.txt");
   
   Assert.AreEqual(actualContent, "Testing is awesome."); 
 }
-
 ```
 #HSLIDE
 
