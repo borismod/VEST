@@ -11,7 +11,7 @@ If you know or own a library like that feel free to contribute via PR.
 |----------	|-------------------------------------------|-----------------------------------------------------------|
 | C#       	| System.IO.Abstractions.TestingHelpers 	| https://github.com/tathamoddie/System.IO.Abstractions     |
 | Python   	| pyfakefs                                  | https://github.com/jmcgeheeiv/pyfakefs                    |
-| Java     	| memoryfilesystem                          | https://github.com/marschall/memoryfilesystem             |
+| Java     	| jimfs                                     | https://github.com/google/jimfs             |
 | Ruby     	| Fakefs                                    | https://github.com/fakefs/fakefs                          |
 
 

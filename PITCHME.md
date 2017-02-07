@@ -63,10 +63,10 @@ public void GetContent_FileExists_ReturnsContent()
   A.CallTo(() => fileSystem.File.ReadAllText(@"c:\myfile.txt"))
         .Returns("Testing is meh.");
 		
-  MyClass myClass = new MyClass(fileSystem);
-  string actualContent = myClass.GetContent(@"c:\myfile.txt");
+  FileReader fileReader = new FileReader(fileSystem);
+  string actualContent = fileReader.GetContent(@"c:\myfile.txt");
   
-  Assert.AreEqual(actualContent, @"c:\myfile.txt")
+  Assert.AreEqual(@"c:\myfile.txt", actualContent)
 }
 ```
 
@@ -178,10 +178,10 @@ public void GetContent_FileExists_ContentRead()
   mockFileSystem.AddFile(@"c:\myfile.txt", 
     new MockFileData("Testing is awesome."));
   
-  MyClass myClass = new MyClass(mockFileSystem);
-  string actualContent = myClass.GetContent(@"c:\myfile.txt");
+  FileReader fileReader = new FileReader(mockFileSystem);
+  string actualContent = fileReader.GetContent(@"c:\myfile.txt");
   
-  Assert.AreEqual(actualContent, "Testing is awesome."); 
+  Assert.AreEqual("Testing is awesome.", actualContent); 
 }
 ```
 #HSLIDE
