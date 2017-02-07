@@ -19,10 +19,27 @@
 ```C#
 using System.IO.Abstractions;
 
-public class MyClass
+public class FileReader
 {
   private IFileSystem _fileSystem;
+  
+  public FileReader(IFileSystem fileSystem)
+  {
+    _fileSystem = fileSystem;
+  }
   ...
+}
+```
+
+#HSLIDE
+
+```C#
+using System.IO.Abstractions;
+
+public class FileReader
+{
+  ...
+  
   public string GetContent(string file)
   { 
     if ( !_fileSystem.File.Exists(file) )
@@ -61,9 +78,9 @@ public void GetContent_FileExists_ReturnsContent()
 
 ```C#
 using System.IO.Abstractions;
-public class MyClass
+public class FileReader
 {
-  private IFileSystem _fileSystem;
+  ...
   
   public string GetContent(string file)
   { 

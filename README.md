@@ -17,9 +17,11 @@ If you know or own a library like that feel free to contribute via PR.
 
 ## In-Memory Database
 
-| Language 	| Library                               |                                                                       |
-|----------	|---------------------------------------|-----------------------------------------------------------------------|
-| C#       	| System.Data.SQLite                 	| https://system.data.sqlite.org/index.html/doc/trunk/www/index.wiki    |
-| Python   	| sqlite3                               | https://docs.python.org/2/library/sqlite3.html                        |
+| Language 	            | Library                               |                                                                       |
+|-----------------------|---------------------------------------|-----------------------------------------------------------------------|
+| C# + Entity Framework | Effort                           	    | https://github.com/tamasflamich/effort                                |
+| C# + NHibernate       | SQLite + NHibernate                   | https://gist.github.com/akimboyko/4319926                             |
+| Python   	            | sqlite3                               | https://docs.python.org/2/library/sqlite3.html                        |
+| Cross-platform        | SQLite                                | https://system.data.sqlite.org/index.html/doc/trunk/www/index.wiki    |
 
 
